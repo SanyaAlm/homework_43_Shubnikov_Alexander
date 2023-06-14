@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Calculation</h1>
+
+    <form action="/" method="post">
+        {% csrf_token %}
+        <label>First Number:</label><br/>
+        <input class="input-radius" type="number" name="First" step="0.01" required/><br/>
+        <label>Second Number:</label><br/>
+        <input class="input-radius" type ='number' name="Second" step="0.01" ><br/>
+        <br/>
+        <div>
+            <p><input name ='do' type="radio" value="+" required> Add( + )</p>
+            <p><input name ='do' type="radio" value="-" required> Subtract( - )</p>
+            <p><input name ='do' type="radio" value="*" required> Multiply( * )</p>
+            <p><input name ='do' type="radio" value=":" required> Divide( / )</p>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Calculate"/>
+    </form>
+</div>
+
+{% endblock %}
